@@ -19,12 +19,27 @@ export const HistoryList = styled.ul`
 `;
 
 export const HistoryItemBg = styled(Paper)`
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   padding: 0 10px;
+  margin-bottom: 10px;
+  ${(props) => {
+    if (props.className == "plus") {
+      return `
+      border-right: 4px solid #00a84d;
+      `;
+    } else {
+      return `
+      border-right: 4px solid #fd1309;
+      `;
+    }
+  }}
 `;
 
 export const HistoryItem = styled.li`
   display: flex;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
   list-style: none;

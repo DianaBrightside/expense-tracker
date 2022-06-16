@@ -1,37 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 
-import CancelIcon from "@mui/icons-material/Cancel";
-import {
-  HistoryCash,
-  HistoryItem,
-  HistoryItemBg,
-  HistoryList,
-  IndexTitle,
-} from "../styles/Texts/AppTexts";
-import { Button } from "@mui/material";
-import { IconRed } from "../styles/Icons/AppIcons";
+import { HistoryList, IndexTitle } from "../styles/Texts/AppTexts";
+
+import { GlobalContext } from "../context/GlobalState";
+import Transaction from "./Transaction";
 
 const TransactionList = () => {
+  const { transactions } = useContext(GlobalContext);
+
   return (
     <>
       <IndexTitle>History</IndexTitle>
       <HistoryList>
-        <HistoryItemBg>
-          <HistoryItem>
-            Cash <HistoryCash>-400$</HistoryCash>{" "}
-            <Button
-              sx={{
-                padding: 0,
-                minWidth: 0,
-                display: "inline-block",
-                lineHeight: 0,
-              }}
-              variant="text"
-            >
-              <IconRed as={CancelIcon} />
-            </Button>
-          </HistoryItem>
-        </HistoryItemBg>
+        {transactions.map((transaction) => (
+          <Transaction key={transaction.id} transaction={transaction} />
+        ))}
       </HistoryList>
     </>
   );
