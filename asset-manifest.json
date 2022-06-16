@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/static/js/main.d3912a0d.js",
-    "index.html": "/index.html",
-    "main.d3912a0d.js.map": "/static/js/main.d3912a0d.js.map"
+    "main.js": "/expense-tracker.github.io/static/js/main.d351fff2.js",
+    "index.html": "/expense-tracker.github.io/index.html",
+    "main.d351fff2.js.map": "/expense-tracker.github.io/static/js/main.d351fff2.js.map"
   },
   "entrypoints": [
-    "static/js/main.d3912a0d.js"
+    "static/js/main.d351fff2.js"
   ]
 }
