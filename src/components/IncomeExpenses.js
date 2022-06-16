@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Divider, Paper } from "@mui/material";
-import RemoveIcon from "@mui/icons-material/Remove";
-
-import { AddIconGreen, IconRed } from "../styles/Icons/AppIcons";
-import { IndexTitle } from "../styles/Texts/AppTexts";
+import {
+  ExpenseBalance,
+  IncomeBalance,
+  IndexTitle,
+} from "../styles/Texts/AppTexts";
+import { GlobalContext } from "../context/GlobalState";
 
 const IncomeExpenses = () => {
+  const { transactions } = useContext(GlobalContext);
+
+  const amounts = transactions.map((transaction) => transaction.amount);
+  const income = amounts
+    .filter((item) => item > 0)
+    .reduce((acc, item) => (acc += item), 0)
+    .toFixed(2);
+
+  const expense = (
+    amounts.filter((item) => item < 0).reduce((acc, item) => (acc += item), 0) *
+    -1
+  ).toFixed(2);
+
   return (
     <Paper sx={{ width: "100%" }}>
       <Box
@@ -16,17 +31,13 @@ const IncomeExpenses = () => {
         }}
       >
         <div>
-          <IndexTitle>
-            Income <AddIconGreen />
-          </IndexTitle>
-          <p>+0.00$</p>
+          <IndexTitle>Income</IndexTitle>
+          <IncomeBalance>${income}</IncomeBalance>
         </div>
         <Divider orientation="vertical" flexItem />
         <div>
-          <IndexTitle>
-            Expense <IconRed as={RemoveIcon} />
-          </IndexTitle>
-          <p>-0.00$</p>
+          <IndexTitle>Expense</IndexTitle>
+          <ExpenseBalance>${expense}</ExpenseBalance>
         </div>
       </Box>
     </Paper>

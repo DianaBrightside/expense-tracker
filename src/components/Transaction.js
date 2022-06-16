@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 
 import CancelIcon from "@mui/icons-material/Cancel";
 import {
@@ -8,9 +8,11 @@ import {
 } from "../styles/Texts/AppTexts";
 import { Button } from "@mui/material";
 import { IconRed } from "../styles/Icons/AppIcons";
+import { GlobalContext } from "../context/GlobalState";
 
 const Transaction = ({ transaction }) => {
   const [signClass, setSignClass] = useState("");
+  const { deleteTransaction } = useContext(GlobalContext);
 
   useEffect(() => {
     transaction.amount > 0 ? setSignClass("plus") : setSignClass("minus");
@@ -26,6 +28,7 @@ const Transaction = ({ transaction }) => {
         </HistoryCash>
       </HistoryItem>
       <Button
+        onClick={() => deleteTransaction(transaction.id)}
         sx={{
           padding: 0,
           minWidth: 0,

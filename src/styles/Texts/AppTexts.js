@@ -13,6 +13,15 @@ export const IndexTitle = styled.h3`
   align-items: center;
 `;
 
+export const IncomeBalance = styled.p`
+  font-weight: bold;
+  color: #00a84d;
+`;
+export const ExpenseBalance = styled.p`
+  font-weight: bold;
+  color: #fd1309;
+`;
+
 export const HistoryList = styled.ul`
   padding: 0;
   width: 100%;
