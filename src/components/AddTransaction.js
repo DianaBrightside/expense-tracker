@@ -32,7 +32,7 @@ const AddTransaction = () => {
       <IndexTitle>Add new transaction</IndexTitle>
       <Divider width="100%" />
       <Form onSubmit={onSubmit}>
-        <Box>
+        <Box sx={{ marginBottom: "20px" }}>
           <InputWrapper>
             <label htmlFor="text">Text</label>
             <InputTransaction
