@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 
 import { HistoryList, IndexTitle } from "../styles/Texts/AppTexts";
 
-import { GlobalContext } from "../context/GlobalState";
 import Transaction from "./Transaction";
+import { GlobalContext } from "../context/GlobalState";
 
 const TransactionList = () => {
   const { transactions } = useContext(GlobalContext);

@@ -1,8 +1,10 @@
-import { Box, Divider } from "@mui/material";
 import React, { useState, useContext } from "react";
+
+import { Box, Divider } from "@mui/material";
 import { AddTransactionBtn } from "../styles/Buttons/AppButtons";
 import { Form, InputTransaction, InputWrapper } from "../styles/Forms/AppForms";
 import { IndexTitle } from "../styles/Texts/AppTexts";
+
 import { GlobalContext } from "../context/GlobalState";
 
 const AddTransaction = () => {
@@ -13,13 +15,16 @@ const AddTransaction = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
       text,
       amount: +amount,
     };
-    addTransaction(newTransaction);
+    if (text !== "" && amount !== 0) {
+      addTransaction(newTransaction);
+    }
+    setText("");
+    setAmount(0);
   };
 
   return (

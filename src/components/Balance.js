@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
 import { IndexTitle } from "../styles/Texts/AppTexts";
+
 import { GlobalContext } from "../context/GlobalState";
 
 const Balance = () => {

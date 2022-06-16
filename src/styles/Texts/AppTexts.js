@@ -25,6 +25,8 @@ export const ExpenseBalance = styled.p`
 export const HistoryList = styled.ul`
   padding: 0;
   width: 100%;
+  min-height: 250px;
+  overflow: scroll;
 `;
 
 export const HistoryItemBg = styled(Paper)`

@@ -1,13 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 
 import CancelIcon from "@mui/icons-material/Cancel";
+import { Button } from "@mui/material";
 import {
   HistoryCash,
   HistoryItem,
   HistoryItemBg,
 } from "../styles/Texts/AppTexts";
-import { Button } from "@mui/material";
 import { IconRed } from "../styles/Icons/AppIcons";
+
 import { GlobalContext } from "../context/GlobalState";
 
 const Transaction = ({ transaction }) => {

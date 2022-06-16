@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
+
 import { Box, Divider, Paper } from "@mui/material";
 import {
   ExpenseBalance,
   IncomeBalance,
   IndexTitle,
 } from "../styles/Texts/AppTexts";
+
 import { GlobalContext } from "../context/GlobalState";
 
 const IncomeExpenses = () => {

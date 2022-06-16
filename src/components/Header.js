@@ -1,4 +1,5 @@
 import React from "react";
+
 import { HeaderTitle } from "../styles/Texts/AppTexts";
 
 const Header = () => {
