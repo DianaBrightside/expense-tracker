@@ -25,8 +25,6 @@ export const ExpenseBalance = styled.p`
 export const HistoryList = styled.ul`
   padding: 0;
   width: 100%;
-  min-height: 250px;
-  overflow: scroll;
 `;
 
 export const HistoryItemBg = styled(Paper)`
@@ -56,10 +54,12 @@ export const HistoryItem = styled.li`
   list-style: none;
   font-size: 1.1em;
   color: #3d3d3d;
+  word-break: break-all;
 `;
 
 export const HistoryCash = styled.span`
-  margin: 10px;
+  margin: 5px;
   font-weight: 600;
   color: #000;
+  width: 20%;
 `;
