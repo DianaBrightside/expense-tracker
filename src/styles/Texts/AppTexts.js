@@ -34,7 +34,7 @@ export const HistoryItemBg = styled(Paper)`
   padding: 0 10px;
   margin-bottom: 10px;
   ${(props) => {
-    if (props.className == "plus") {
+    if (props.className === "plus") {
       return `
       border-right: 4px solid #00a84d;
       `;
@@ -52,14 +52,17 @@ export const HistoryItem = styled.li`
   justify-content: space-between;
   align-items: center;
   list-style: none;
+`;
+export const HistoryText = styled.p`
+  width: 90%;
   font-size: 1.1em;
   color: #3d3d3d;
   word-break: break-all;
 `;
-
 export const HistoryCash = styled.span`
   margin: 5px;
+  text-align: right;
   font-weight: 600;
   color: #000;
-  width: 20%;
+  width: 10%;
 `;

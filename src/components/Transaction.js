@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import {
   HistoryCash,
   HistoryItem,
+  HistoryText,
   HistoryItemBg,
 } from "../styles/Texts/AppTexts";
 import { IconRed } from "../styles/Icons/AppIcons";
@@ -17,13 +18,13 @@ const Transaction = ({ transaction }) => {
 
   useEffect(() => {
     transaction.amount > 0 ? setSignClass("plus") : setSignClass("minus");
-  });
+  }, [transaction.amount]);
 
   const sign = transaction.amount < 0 ? "-" : "+";
   return (
     <HistoryItemBg className={signClass}>
       <HistoryItem>
-        {transaction.text}{" "}
+        <HistoryText>{transaction.text} </HistoryText>
         <HistoryCash>
           {sign}${Math.abs(transaction.amount)}
         </HistoryCash>
