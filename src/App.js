@@ -17,7 +17,7 @@ function App() {
         <Box
           sx={{
             height: "100vh",
-            width: "40%",
+            width: { xs: "90%", md: "70%", lg: "50%" },
             margin: "auto",
             display: "flex",
             flexDirection: "column",

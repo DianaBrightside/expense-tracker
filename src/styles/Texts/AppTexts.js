@@ -55,6 +55,9 @@ export const HistoryItem = styled.li`
 `;
 export const HistoryText = styled.p`
   width: 90%;
+  @media (max-width: 899px) {
+    width: 70%;
+  }
   font-size: 1.1em;
   color: #3d3d3d;
   word-break: break-all;
@@ -65,4 +68,7 @@ export const HistoryCash = styled.span`
   font-weight: 600;
   color: #000;
   width: 10%;
+  @media (max-width: 899px) {
+    width: 15%;
+  }
 `;
