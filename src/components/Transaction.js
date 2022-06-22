@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 
 import CancelIcon from "@mui/icons-material/Cancel";
-import { Button } from "@mui/material";
+import { ButtonBase } from "@mui/material";
 import {
   HistoryCash,
   HistoryItem,
@@ -29,7 +29,8 @@ const Transaction = ({ transaction }) => {
           {sign}${Math.abs(transaction.amount)}
         </HistoryCash>
       </HistoryItem>
-      <Button
+      <ButtonBase
+        disableRipple={true}
         onClick={() => deleteTransaction(transaction.id)}
         sx={{
           padding: 0,
@@ -40,7 +41,7 @@ const Transaction = ({ transaction }) => {
         variant="text"
       >
         <IconRed as={CancelIcon} />
-      </Button>
+      </ButtonBase>
     </HistoryItemBg>
   );
 };
